@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop All | JBS Soaps & Co</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #fdfbf7;
+            --text-main: #2d3436;
+            --accent-green: #6b8e23;
+            --soft-slate: #95a5a6;
+            --white: #ffffff;
+            --border: #e0e0e0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* PERSISTENT NAV */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            background: var(--bg-color);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: inherit;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-main);
+            margin-left: 2rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* SHOP LAYOUT */
+        .shop-header {
+            padding: 4rem 10% 2rem;
+            text-align: center;
+        }
+        .shop-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+        }
+
+        .shop-container {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 4rem;
+            padding: 2rem 10% 8rem;
+        }
+
+        /* FILTERS */
+        .filters h4 {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.5rem;
+        }
+        .filter-group { margin-bottom: 2.5rem; }
+        .filter-group ul { list-style: none; }
+        .filter-group li {
+            font-size: 0.9rem;
+            margin-bottom: 0.6rem;
+            color: var(--soft-slate);
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        .filter-group li:hover { color: var(--accent-green); }
+        .filter-group li.active { color: var(--text-main); font-weight: 600; }
+
+        /* PRODUCT GRID */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 3rem 2rem;
+        }
+        .product-card {
+            text-decoration: none;
+            color: inherit;
+            group: hover;
+        }
+        .product-img-wrapper {
+            aspect-ratio: 1/1;
+            background: #f4f4f4;
+            margin-bottom: 1.2rem;
+            overflow: hidden;
+            position: relative;
+        }
+        .product-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        .product-card:hover img { transform: scale(1.05); }
+        
+        /* Badges */
+        .badge {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: white;
+            padding: 0.3rem 0.8rem;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        .product-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            margin-bottom: 0.3rem;
+        }
+        .product-benefit {
+            font-size: 0.8rem;
+            color: var(--soft-slate);
+            font-style: italic;
+            margin-bottom: 0.8rem;
+        }
+        .product-price {
+            font-weight: 300;
+            font-size: 1rem;
+        }
+
+        /* PERSISTENT FOOTER */
+        footer {
+            padding: 5rem 10% 2rem;
+            background: #f4f4f4;
+            border-top: 1px solid var(--border);
+        }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 4rem; }
+        .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 1rem; }
+
+        @media (max-width: 900px) {
+            .shop-container { grid-template-columns: 1fr; }
+            .filters { display: flex; overflow-x: auto; gap: 2rem; margin-bottom: 2rem; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">JBS Soaps & Co</a>
+        <div class="nav-links">
+            <a href="shop.html">Shop</a>
+            <a href="#">Ingredients</a>
+            <a href="about.html">About</a>
+            <a href="#">Cart (0)</a>
+        </div>
+    </nav>
+
+    <div class="shop-header">
+        <h1>Botanical Shop</h1>
+        <p style="color: var(--soft-slate)">Small-batch formulations for mindful body care.</p>
+    </div>
+
+    <div class="shop-container">
+        <!-- Sidebar Filters -->
+        <aside class="filters">
+            <div class="filter-group">
+                <h4>Collections</h4>
+                <ul>
+                    <li class="active">All Products</li>
+                    <li>Naturals</li>
+                    <li>Botanical Bars</li>
+                    <li>Face & Body Scrubs</li>
+                </ul>
+            </div>
+            <div class="filter-group">
+                <h4>By Ritual</h4>
+                <ul>
+                    <li>Soothing</li>
+                    <li>Detoxifying</li>
+                    <li>Energizing</li>
+                    <li>Unscented</li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Main Grid -->
+        <main class="product-grid">
+            
+            <!-- Item 1: From current site -->
+            <a href="#" class="product-card">
+                <div class="product-img-wrapper">
+                    <span class="badge">Bestseller</span>
+                    <img src="https://images.unsplash.com/photo-1600857062241-98e5dba7f214?auto=format&fit=crop&q=80&w=800" alt="Eucalyptus Scrub">
+                </div>
+                <div class="product-info">
+                    <h3>Eucalyptus Face Scrub</h3>
+                    <p class="product-benefit">Clarifying & Cooling</p>
+                    <p class="product-price">$25.00</p>
+                </div>
+            </a>
+
+            <!-- Item 2: From current site -->
+            <a href="#" class="product-card">
+                <div class="product-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1607006483120-00971b569238?auto=format&fit=crop&q=80&w=800" alt="Aloe Vera Soap">
+                </div>
+                <div class="product-info">
+                    <h3>Aloe Vera Botanical Bar</h3>
+                    <p class="product-benefit">Hydrating & Gentle</p>
+                    <p class="product-price">$25.00</p>
+                </div>
+            </a>
+
+            <!-- Item 3: From current site -->
+            <a href="#" class="product-card">
+                <div class="product-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1590439471364-192aa70c0b53?auto=format&fit=crop&q=80&w=800" alt="Cocoa Soap">
+                </div>
+                <div class="product-info">
+                    <h3>Raw Cocoa Powder Soap</h3>
+                    <p class="product-benefit">Rich Antioxidants</p>
+                    <p class="product-price">$25.00</p>
+                </div>
+            </a>
+
+            <!-- Item 4: Placeholder for wellness feel -->
+            <a href="#" class="product-card">
+                <div class="product-img-wrapper">
+                    <span class="badge">Limited</span>
+                    <img src="https://images.unsplash.com/photo-1546552356-3fae876a61ca?auto=format&fit=crop&q=80&w=800" alt="Lavender Oat">
+                </div>
+                <div class="product-info">
+                    <h3>Lavender & Wild Oat</h3>
+                    <p class="product-benefit">Calming Sleep Ritual</p>
+                    <p class="product-price">$25.00</p>
+                </div>
+            </a>
+
+            <!-- Item 5: Placeholder -->
+            <a href="#" class="product-card">
+                <div class="product-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1626015523023-e63065b2f6b8?auto=format&fit=crop&q=80&w=800" alt="Activated Charcoal">
+                </div>
+                <div class="product-info">
+                    <h3>Activated Charcoal Detox</h3>
+                    <p class="product-benefit">Deep Pore Cleansing</p>
+                    <p class="product-price">$25.00</p>
+                </div>
+            </a>
+
+        </main>
+    </div>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="footer-logo">JBS Soaps & Co</div>
+                <p style="color: var(--soft-slate); font-size: 0.9rem;">Elevating your daily routine through the power of clean chemistry and botanical tradition.</p>
+            </div>
+            <div class="footer-col">
+                <h5>Information</h5>
+                <ul>
+                    <li>Shipping Policy</li>
+                    <li>Wholesale</li>
+                    <li>FAQs</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>Contact</h5>
+                <ul>
+                    <li>Dallas / Fort Worth</li>
+                    <li>info@jbssoap.com</li>
+                </ul>
+            </div>
+        </div>
+        <div style="text-align: center; border-top: 1px solid #ddd; padding-top: 2rem; font-size: 0.7rem; letter-spacing: 1px; color: #999; margin-top: 3rem;">
+            &copy; 2024 JBS SOAPS & CO. ALL RIGHTS RESERVED.
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JBS Soaps & Co | Pure Wellness</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #fdfbf7;
+            --text-main: #2d3436;
+            --accent-green: #6b8e23; /* Sage */
+            --soft-slate: #95a5a6;
+            --white: #ffffff;
+            --border: #e0e0e0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            background: var(--bg-color);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-main);
+            margin-left: 2rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-green);
+        }
+
+        /* Hero Section */
+        header.hero {
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 10%;
+            background: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)), 
+                        url('https://images.unsplash.com/photo-1600857062241-98e5dba7f214?auto=format&fit=crop&q=80&w=2000') center/cover;
+        }
+
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 400;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: var(--soft-slate);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background-color: var(--text-main);
+            color: white;
+            text-decoration: none;
+            border-radius: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.8rem;
+            transition: opacity 0.3s;
+        }
+
+        .cta-button:hover {
+            opacity: 0.8;
+        }
+
+        /* Wellness Values */
+        .values {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            padding: 5rem 10%;
+            gap: 2rem;
+            text-align: center;
+            background: white;
+        }
+
+        .value-card h3 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 0.5rem;
+        }
+
+        .value-card p {
+            font-size: 0.9rem;
+            color: var(--soft-slate);
+        }
+
+        /* Featured Products */
+        .featured {
+            padding: 5rem 5%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: white;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-image {
+            width: 100%;
+            aspect-ratio: 1/1;
+            background-color: #f2f2f2;
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-info {
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .product-info h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-price {
+            color: var(--soft-slate);
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            padding: 5rem 10% 2rem;
+            background: #f4f4f4;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-col h5 {
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--soft-slate);
+        }
+
+        @media (max-width: 768px) {
+            .values, .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">JBS Soaps & Co</div>
+        <div class="nav-links">
+            <a href="#">Shop</a>
+            <a href="#">Ingredients</a>
+            <a href="#">About</a>
+            <a href="#">Cart (0)</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <p>EST. IN TEXAS</p>
+            <h1>Cleanse with Intention</h1>
+            <p>Handcrafted, small-batch soaps formulated with plant-based botanicals for a ritualistic bathing experience.</p>
+            <a href="#" class="cta-button">Explore the Collection</a>
+        </div>
+    </header>
+
+    <section class="values">
+        <div class="value-card">
+            <h3>Pure Ingredients</h3>
+            <p>Free from synthetic fragrances, sulfates, and parabens.</p>
+        </div>
+        <div class="value-card">
+            <h3>Small Batch</h3>
+            <p>Artisanally crafted in Dallas, Texas to ensure potency.</p>
+        </div>
+        <div class="value-card">
+            <h3>Wellness First</h3>
+            <p>Ph-balanced formulas designed for the most sensitive skin.</p>
+        </div>
+    </section>
+
+    <section class="featured">
+        <h2 class="section-title">The Essentials</h2>
+        <div class="product-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1546552356-3fae876a61ca?auto=format&fit=crop&q=80&w=800" alt="Eucalyptus Soap">
+                </div>
+                <div class="product-info">
+                    <h4>Eucalyptus & Mint Scrub</h4>
+                    <p class="product-price">$22.00</p>
+                </div>
+            </div>
+            <!-- Product 2 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1607006483120-00971b569238?auto=format&fit=crop&q=80&w=800" alt="Aloe Soap">
+                </div>
+                <div class="product-info">
+                    <h4>Botanical Aloe Vera</h4>
+                    <p class="product-price">$22.00</p>
+                </div>
+            </div>
+            <!-- Product 3 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1590439471364-192aa70c0b53?auto=format&fit=crop&q=80&w=800" alt="Cocoa Soap">
+                </div>
+                <div class="product-info">
+                    <h4>Raw Cocoa & Oat</h4>
+                    <p class="product-price">$22.00</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="footer-logo">JBS Soaps & Co</div>
+                <p style="color: var(--soft-slate); font-size: 0.9rem;">Elevating your daily routine through the power of clean chemistry and botanical tradition.</p>
+            </div>
+            <div class="footer-col">
+                <h5>Information</h5>
+                <ul>
+                    <li>Shipping Policy</li>
+                    <li>Wholesale</li>
+                    <li>FAQs</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>Contact</h5>
+                <ul>
+                    <li>Dallas / Fort Worth</li>
+                    <li>info@jbssoap.com</li>
+                </ul>
+            </div>
+        </div>
+        <div style="text-align: center; border-top: 1px solid #ddd; padding-top: 2rem; font-size: 0.7rem; letter-spacing: 1px; color: #999;">
+            &copy; 2024 JBS SOAPS & CO. ALL RIGHTS RESERVED.
+        </div>
+    </footer>
+
+</body>
+</html>

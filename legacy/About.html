@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | JBS Soaps & Co</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #fdfbf7;
+            --text-main: #2d3436;
+            --accent-green: #6b8e23; /* Sage */
+            --soft-slate: #95a5a6;
+            --white: #ffffff;
+            --border: #e0e0e0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* Navigation (Persistent) */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            background: var(--bg-color);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-main);
+            margin-left: 2rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-green);
+        }
+
+        /* About Hero */
+        .about-hero {
+            padding: 8rem 10% 4rem;
+            text-align: center;
+        }
+
+        .about-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 400;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-hero p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            color: var(--soft-slate);
+        }
+
+        /* Story Section - Split Layout */
+        .story-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            padding: 5rem 10%;
+            gap: 5rem;
+            background: var(--white);
+        }
+
+        .story-image img {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+            filter: grayscale(20%);
+        }
+
+        .story-text h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .story-text p {
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            color: #555;
+        }
+
+        /* Philosophy Grid */
+        .philosophy {
+            padding: 8rem 10%;
+            background: #f4f4f4;
+        }
+
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+        }
+
+        .phil-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent-green);
+        }
+
+        /* Signature Section */
+        .signature {
+            padding: 8rem 10%;
+            text-align: center;
+        }
+
+        .signature blockquote {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-style: italic;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+
+        .founder-name {
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* Footer (Persistent) */
+        footer {
+            padding: 5rem 10% 2rem;
+            background: #f4f4f4;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-col h5 {
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--soft-slate);
+        }
+
+        @media (max-width: 900px) {
+            .story-section, .philosophy-grid, .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            .story-image img { height: 400px; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">JBS Soaps & Co</a>
+        <div class="nav-links">
+            <a href="#">Shop</a>
+            <a href="#">Ingredients</a>
+            <a href="#">About</a>
+            <a href="#">Cart (0)</a>
+        </div>
+    </nav>
+
+    <header class="about-hero">
+        <h1>The Soul of the Soap</h1>
+        <p>A journey from a family kitchen to a wellness-focused studio, driven by the radical idea that simplicity is the ultimate luxury.</p>
+    </header>
+
+    <section class="story-section">
+        <div class="story-image">
+            <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&q=80&w=1000" alt="Artisan at work">
+        </div>
+        <div class="story-text">
+            <h2>Born of a Mother’s Love</h2>
+            <p>JBS Soaps & Co. wasn't born in a boardroom; it began with a mother's frustration. Our founder, Shana Adams, started looking at the ingredient labels of her family's skincare and realized she couldn't pronounce half of what was touching her children's skin.</p>
+            <p>She believed that what we put <em>on</em> our bodies is just as vital as what we put <em>in</em> them. This sparked a mission to reclaim the bathing ritual using only earth-derived botanicals, high-quality plant oils, and rich butters.</p>
+            <p>What started as a labor of love in a Dallas kitchen has evolved into a dedicated studio where every bar is hand-poured, cured for weeks, and inspected for purity.</p>
+        </div>
+    </section>
+
+    <section class="philosophy">
+        <div class="philosophy-grid">
+            <div class="phil-card">
+                <h3>Plant-Based Purity</h3>
+                <p>We rely on olive oils, coconut, and shea butters. No synthetic fragrances, no sulfates, and absolutely no parabens.</p>
+            </div>
+            <div class="phil-card">
+                <h3>Small-Batch Ethics</h3>
+                <p>Scaling up shouldn't mean watering down. We maintain small-batch production to ensure every bar meets our clinical standards.</p>
+            </div>
+            <div class="phil-card">
+                <h3>Total Transparency</h3>
+                <p>Like Sliquid, we believe you have the right to know exactly what is in your products. Every ingredient is listed and explained.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="signature">
+        <blockquote>"Our goal isn't just to get you clean. It's to give you a moment of quiet, botanical connection in a loud world."</blockquote>
+        <div class="founder-name">— Shana Adams, Founder</div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="footer-logo">JBS Soaps & Co</div>
+                <p style="color: var(--soft-slate); font-size: 0.9rem;">Elevating your daily routine through the power of clean chemistry and botanical tradition.</p>
+            </div>
+            <div class="footer-col">
+                <h5>Information</h5>
+                <ul>
+                    <li>Shipping Policy</li>
+                    <li>Wholesale</li>
+                    <li>FAQs</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>Contact</h5>
+                <ul>
+                    <li>Dallas / Fort Worth</li>
+                    <li>info@jbssoap.com</li>
+                </ul>
+            </div>
+        </div>
+        <div style="text-align: center; border-top: 1px solid #ddd; padding-top: 2rem; font-size: 0.7rem; letter-spacing: 1px; color: #999;">
+            &copy; 2024 JBS SOAPS & CO. ALL RIGHTS RESERVED.
+        </div>
+    </footer>
+
+</body>
+</html>
