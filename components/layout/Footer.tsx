@@ -64,7 +64,7 @@ export default function Footer() {
       </div>
 
       <div className="text-center border-t border-white/10 pt-8 text-[0.65rem] tracking-widest text-[#8a8070] uppercase">
-        &copy; {new Date().getFullYear()} JBS SOAPS & CO. ALL RIGHTS RESERVED. — DALLAS, TEXAS
+        &copy; {new Date().getFullYear()} JBS SOAPS & CO. ALL RIGHTS RESERVED. — Made with ❤️🎧 NITPTech
       </div>
     </footer>
   );
