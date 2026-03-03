@@ -2,6 +2,8 @@ import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { SEED_PRODUCTS } from "@/lib/seed-products";
 
+export const runtime = "edge";
+
 export async function GET() {
   if (
     process.env.NEXT_PUBLIC_SUPABASE_URL &&

@@ -3,6 +3,8 @@ import { createClient } from "@/lib/supabase/server";
 import { SEED_PRODUCTS } from "@/lib/seed-products";
 import type { Metadata } from "next";
 
+export const runtime = "edge";
+
 export const metadata: Metadata = {
   title: "Botanical Shop",
   description:

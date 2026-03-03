@@ -4,6 +4,8 @@ import FeaturedProducts from "@/components/home/FeaturedProducts";
 import { createClient } from "@/lib/supabase/server";
 import { SEED_PRODUCTS } from "@/lib/seed-products";
 
+export const runtime = "edge";
+
 export default async function HomePage() {
   let featuredProducts = SEED_PRODUCTS.filter((p) => p.is_featured);
 

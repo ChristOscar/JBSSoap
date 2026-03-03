@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
+export const runtime = "edge";
+
 // Server-side fallback for contact form if EmailJS is unavailable.
 // In practice, the client-side EmailJS call handles this.
 export async function POST(req: NextRequest) {

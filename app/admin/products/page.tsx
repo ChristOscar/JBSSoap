@@ -4,6 +4,7 @@ import { SEED_PRODUCTS } from "@/lib/seed-products";
 import ProductTable from "@/components/admin/ProductTable";
 import type { Metadata } from "next";
 
+export const runtime = "edge";
 export const metadata: Metadata = { title: "Products | JBS Admin" };
 
 export default async function AdminProductsPage() {

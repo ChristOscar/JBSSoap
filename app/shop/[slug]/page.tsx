@@ -8,6 +8,8 @@ import RecommendedProducts from "@/components/product/RecommendedProducts";
 import type { Metadata } from "next";
 import type { Product } from "@/types";
 
+export const runtime = "edge";
+
 interface Props {
   params: Promise<{ slug: string }>;
 }
@@ -52,10 +54,6 @@ async function getRecommended(ids: string[]): Promise<Product[]> {
     }
   }
   return SEED_PRODUCTS.filter((p) => ids.includes(p.id));
-}
-
-export async function generateStaticParams() {
-  return SEED_PRODUCTS.map((p) => ({ slug: p.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

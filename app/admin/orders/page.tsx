@@ -1,6 +1,7 @@
 import { createClient } from "@/lib/supabase/server";
 import type { Metadata } from "next";
 
+export const runtime = "edge";
 export const metadata: Metadata = { title: "Orders | JBS Admin" };
 
 export default async function AdminOrdersPage() {
