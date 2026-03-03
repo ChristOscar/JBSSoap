@@ -39,16 +39,16 @@ export default function Shop() {
 
   return (
     <>
-      <div className="text-center py-16 px-[10%] bg-[#f5f0e8] border-b border-[#e4ddd2]">
-        <h1 className="font-playfair text-5xl font-normal text-[#2d2a26] mb-3">
+      <div className="text-center py-10 md:py-16 px-4 md:px-[10%] bg-[#f5f0e8] border-b border-[#e4ddd2]">
+        <h1 className="font-playfair text-[clamp(2rem,6vw,3rem)] font-normal text-[#2d2a26] mb-3">
           Botanical Shop
         </h1>
-        <p className="text-[#8a8070]">
+        <p className="text-[#8a8070] text-sm md:text-base">
           Small-batch formulations for mindful body care.
         </p>
       </div>
 
-      <div className="flex flex-col md:flex-row gap-12 px-[10%] py-12 pb-24 bg-[#f5f0e8]">
+      <div className="flex flex-col md:flex-row gap-4 md:gap-12 px-4 md:px-[10%] py-8 md:py-12 pb-16 md:pb-24 bg-[#f5f0e8]">
         <FilterSidebar
           activeCollection={activeCollection}
           activeRitual={activeRitual}

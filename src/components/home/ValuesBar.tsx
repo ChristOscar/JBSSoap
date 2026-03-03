@@ -18,8 +18,8 @@ const values = [
 
 export default function ValuesBar() {
   return (
-    <section className="bg-[#faf7f2] border-y border-[#e4ddd2] py-20 px-[10%]">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+    <section className="bg-[#faf7f2] border-y border-[#e4ddd2] py-12 md:py-20 px-6 md:px-[10%]">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 text-center">
         {values.map(({ icon, title, body }) => (
           <div key={title}>
             <div className="text-[#8b6b14] text-2xl mb-4">{icon}</div>

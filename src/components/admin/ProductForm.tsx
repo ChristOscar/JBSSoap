@@ -195,7 +195,7 @@ export default function ProductForm({
           Pricing & Inventory
         </h2>
 
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label className="block text-xs uppercase tracking-widest mb-2 text-[#2d3436]">
               Price ($) *
@@ -227,7 +227,7 @@ export default function ProductForm({
           </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label className="block text-xs uppercase tracking-widest mb-2 text-[#2d3436]">
               Sort Order

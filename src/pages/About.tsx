@@ -2,11 +2,11 @@ export default function About() {
   return (
     <>
       {/* Hero */}
-      <header className="text-center py-32 px-[10%] bg-[#f5f0e8]">
-        <h1 className="font-playfair text-[clamp(2.5rem,6vw,4.5rem)] font-normal italic mb-6 text-[#2d2a26]">
+      <header className="text-center py-16 md:py-32 px-6 md:px-[10%] bg-[#f5f0e8]">
+        <h1 className="font-playfair text-[clamp(2.2rem,6vw,4.5rem)] font-normal italic mb-6 text-[#2d2a26]">
           The Soul of the Soap
         </h1>
-        <p className="max-w-2xl mx-auto text-[#8a8070] text-lg leading-relaxed">
+        <p className="max-w-2xl mx-auto text-[#8a8070] text-base md:text-lg leading-relaxed">
           A journey from a family kitchen to a wellness-focused studio, driven
           by the belief that what touches your skin should be as pure as what
           you put in your body.
@@ -14,9 +14,9 @@ export default function About() {
       </header>
 
       {/* Story Section */}
-      <section className="bg-[#faf7f2] py-20 px-[10%]">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
-          <div className="relative h-[500px] bg-[#ede8e0] overflow-hidden">
+      <section className="bg-[#faf7f2] py-12 md:py-20 px-6 md:px-[10%]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 items-center">
+          <div className="h-64 sm:h-80 md:h-[500px] bg-[#ede8e0] overflow-hidden">
             <img
               src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&q=80&w=1000"
               alt="Artisan at work"
@@ -25,7 +25,7 @@ export default function About() {
             />
           </div>
           <div>
-            <h2 className="font-playfair text-3xl mb-8 text-[#2d2a26]">
+            <h2 className="font-playfair text-2xl md:text-3xl mb-6 md:mb-8 text-[#2d2a26]">
               Born of a Mother&apos;s Love
             </h2>
             <p className="text-sm text-[#555] leading-relaxed mb-5">
@@ -51,11 +51,11 @@ export default function About() {
       </section>
 
       {/* Philosophy Grid */}
-      <section className="py-24 px-[10%] bg-[#f5f0e8]">
-        <h2 className="font-playfair text-3xl text-center mb-14 text-[#2d2a26]">
+      <section className="py-14 md:py-24 px-6 md:px-[10%] bg-[#f5f0e8]">
+        <h2 className="font-playfair text-2xl md:text-3xl text-center mb-10 md:mb-14 text-[#2d2a26]">
           What We Stand For
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
           {[
             {
               title: "Plant-Based Purity",
@@ -82,8 +82,8 @@ export default function About() {
       </section>
 
       {/* Signature Quote */}
-      <section className="py-24 px-[10%] text-center bg-[#faf7f2]">
-        <blockquote className="font-playfair text-[1.6rem] italic max-w-3xl mx-auto mb-6 text-[#2d2a26] leading-snug">
+      <section className="py-14 md:py-24 px-6 md:px-[10%] text-center bg-[#faf7f2]">
+        <blockquote className="font-playfair text-[1.3rem] md:text-[1.6rem] italic max-w-3xl mx-auto mb-6 text-[#2d2a26] leading-snug">
           &ldquo;Our goal isn&apos;t just to get you clean. It&apos;s to give
           you a moment of quiet, botanical connection in a loud world.&rdquo;
         </blockquote>

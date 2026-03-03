@@ -1,16 +1,16 @@
 export default function GetToKnowMe() {
   return (
     <>
-      <header className="text-center py-32 px-[10%] bg-[#f5f0e8]">
-        <h1 className="font-playfair text-[clamp(2.5rem,6vw,4.5rem)] font-normal italic mb-6 text-[#2d2a26]">
+      <header className="text-center py-16 md:py-32 px-6 md:px-[10%] bg-[#f5f0e8]">
+        <h1 className="font-playfair text-[clamp(2.2rem,6vw,4.5rem)] font-normal italic mb-6 text-[#2d2a26]">
           Our Story
         </h1>
-        <p className="max-w-xl mx-auto text-[#8a8070] text-lg">
+        <p className="max-w-xl mx-auto text-[#8a8070] text-base md:text-lg">
           The woman who started it all — and why she did.
         </p>
       </header>
 
-      <section className="bg-[#faf7f2] py-16 px-[10%]">
+      <section className="bg-[#faf7f2] py-12 md:py-16 px-6 md:px-[10%]">
         <div className="max-w-3xl mx-auto space-y-7 text-sm text-[#555] leading-relaxed">
           <p>
             Hi, I&apos;m{" "}

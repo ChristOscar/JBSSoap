@@ -73,8 +73,8 @@ export default function ProductDetail() {
 
   return (
     <>
-      <div className="px-[5%] py-16 max-w-6xl mx-auto bg-[#f5f0e8]">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-14 items-start">
+      <div className="px-4 md:px-[5%] py-8 md:py-16 max-w-6xl mx-auto bg-[#f5f0e8]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-14 items-start">
           {/* Image Gallery */}
           <div>
             <div className="aspect-square bg-[#ede8e0] overflow-hidden mb-4">

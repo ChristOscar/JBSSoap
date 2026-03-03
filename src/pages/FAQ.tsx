@@ -40,16 +40,16 @@ export default function FAQ() {
 
   return (
     <>
-      <header className="text-center py-24 px-[10%] bg-[#fdfbf7]">
-        <h1 className="font-playfair text-5xl font-normal italic mb-4 text-[#2d3436]">
+      <header className="text-center py-14 md:py-24 px-6 md:px-[10%] bg-[#fdfbf7]">
+        <h1 className="font-playfair text-[clamp(2rem,5vw,4.5rem)] font-normal italic mb-4 text-[#2d3436]">
           Frequently Asked Questions
         </h1>
-        <p className="text-[#95a5a6]">
+        <p className="text-[#95a5a6] text-sm md:text-base">
           Everything you need to know before you lather up.
         </p>
       </header>
 
-      <section className="px-[10%] pb-24 max-w-3xl mx-auto">
+      <section className="px-4 md:px-[10%] pb-16 md:pb-24 max-w-3xl mx-auto">
         <div className="space-y-0 border-t border-[#e0e0e0]">
           {faqs.map((faq, i) => (
             <div key={i} className="border-b border-[#e0e0e0]">
@@ -58,8 +58,8 @@ export default function FAQ() {
                 className="w-full flex items-center justify-between py-5 text-left text-sm font-semibold text-[#2d3436] hover:text-[#6b8e23] transition-colors"
                 aria-expanded={openIndex === i}
               >
-                <span>{faq.q}</span>
-                <span className="ml-4 text-xl leading-none flex-shrink-0 text-[#95a5a6]">
+                <span className="pr-4">{faq.q}</span>
+                <span className="text-xl leading-none flex-shrink-0 text-[#95a5a6]">
                   {openIndex === i ? "−" : "+"}
                 </span>
               </button>

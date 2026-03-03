@@ -7,7 +7,12 @@ const navItems = [
   { label: "Orders", href: "/admin/orders" },
 ];
 
-export default function AdminSidebar() {
+interface AdminSidebarProps {
+  open?: boolean;
+  onClose?: () => void;
+}
+
+export default function AdminSidebar({ open, onClose }: AdminSidebarProps) {
   const { pathname } = useLocation();
   const navigate = useNavigate();
 
@@ -18,11 +23,24 @@ export default function AdminSidebar() {
   };
 
   return (
-    <aside className="w-56 bg-[#2d3436] text-white flex flex-col min-h-screen flex-shrink-0">
-      <div className="px-6 py-6 border-b border-white/10">
+    <aside
+      className={`fixed inset-y-0 left-0 z-50 w-56 bg-[#2d3436] text-white flex flex-col flex-shrink-0 transition-transform duration-200 md:relative md:translate-x-0 md:z-auto md:min-h-screen ${
+        open ? "translate-x-0" : "-translate-x-full"
+      }`}
+    >
+      <div className="px-6 py-6 border-b border-white/10 flex items-center justify-between">
         <div className="font-playfair text-sm font-bold uppercase tracking-wide">
           JBS Admin
         </div>
+        {onClose && (
+          <button
+            onClick={onClose}
+            className="md:hidden text-white/60 hover:text-white text-2xl leading-none"
+            aria-label="Close menu"
+          >
+            ×
+          </button>
+        )}
       </div>
 
       <nav className="flex-1 px-4 py-6 space-y-1">
@@ -35,6 +53,7 @@ export default function AdminSidebar() {
             <Link
               key={href}
               to={href}
+              onClick={onClose}
               className={`block px-3 py-2.5 text-sm rounded transition-colors ${
                 isActive
                   ? "bg-white/10 text-white"
