@@ -25,6 +25,11 @@ const INQUIRY_TYPES = [
     label: "Content",
     description: "Press, partnerships, and brand features",
   },
+  {
+    value: "Other",
+    label: "Other",
+    description: "General questions or anything else",
+  },
 ];
 
 const RATE_LIMIT_KEY = "jbs_contact_last_sent";
@@ -45,11 +50,19 @@ export default function Contact() {
   const formRef = useRef<HTMLFormElement>(null);
   const [status, setStatus] = useState<Status>("idle");
   const [inquiryType, setInquiryType] = useState("");
+  const [inquiryError, setInquiryError] = useState(false);
   const [rateLimitMinutes, setRateLimitMinutes] = useState(0);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formRef.current) return;
+
+    // Inquiry type required
+    if (!inquiryType) {
+      setInquiryError(true);
+      return;
+    }
+    setInquiryError(false);
 
     // Rate limiting check
     const remaining = getRemainingMinutes();
@@ -87,6 +100,7 @@ export default function Contact() {
       setStatus("success");
       formRef.current.reset();
       setInquiryType("");
+      setInquiryError(false);
     } catch {
       setStatus("error");
     }
@@ -176,16 +190,16 @@ export default function Contact() {
               {/* Inquiry type */}
               <div>
                 <label className="block text-[0.65rem] uppercase tracking-widest mb-4 text-[#2d2a26]">
-                  What can we help with?
+                  What can we help with? <span className="text-[#8b6b14]">*</span>
                 </label>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {INQUIRY_TYPES.map(({ value, label, description }) => {
                     const selected = inquiryType === value;
                     return (
                       <button
                         key={value}
                         type="button"
-                        onClick={() => setInquiryType(selected ? "" : value)}
+                        onClick={() => { setInquiryType(selected ? "" : value); setInquiryError(false); }}
                         className={`text-left px-4 py-4 border transition-all duration-200 ${
                           selected
                             ? "border-[#8b6b14] bg-[#8b6b14] text-white"
@@ -207,6 +221,11 @@ export default function Contact() {
                   })}
                 </div>
                 <input type="hidden" name="inquiry_type" value={inquiryType} />
+                {inquiryError && (
+                  <p className="text-red-500 text-xs mt-2">
+                    Please select an inquiry type.
+                  </p>
+                )}
               </div>
 
               {/* Message */}
